@@ -1,0 +1,10 @@
+philo
+*.o
+*.out
+*.dSYM/
+.vscode/
+.idea/
+__pycache__/
+.pytest_cache/
+philo_tsan
+philo_asan

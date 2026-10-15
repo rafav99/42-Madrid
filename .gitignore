@@ -1,0 +1,17 @@
+# Generated artifacts
+*.o
+*.a
+*.d
+*.out
+*.pyc
+__pycache__/
+.DS_Store
+**/obj/
+**/dep/
+minishell/minishell
+push_swap/push_swap
+philosophers/philo
+philosophers/philosophers
+so_long/so_long
+third_party/minilibx-linux/
+*.swp
