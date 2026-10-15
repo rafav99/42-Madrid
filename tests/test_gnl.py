@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 CODE = r'''#include "get_next_line.h"
 #include <fcntl.h>
 #include <stdlib.h>

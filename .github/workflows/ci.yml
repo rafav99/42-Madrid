@@ -1,4 +1,4 @@
-name: 42 Madrid build
+name: C builds and tests
 on:
   push:
   pull_request:
@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential git python3 libreadline-dev
-      - name: Build non-graphical projects
+      - name: Dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential python3 libreadline-dev
+      - name: Build
         run: make core
-      - name: Test reconstructed code
+      - name: Test
         run: make test
-  graphical-build:
+  graphics:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Dependencies
         run: sudo apt-get update && sudo apt-get install -y build-essential git python3 libreadline-dev libx11-dev libxext-dev libbsd-dev zlib1g-dev
-      - name: Compile so_long and shared libraries
-        run: make all
+      - name: Build game and libraries
+        run: make

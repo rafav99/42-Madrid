@@ -1,9 +1,11 @@
 # Libft
 
- The libft project in 42 is a programming project that requires students to create their own library of basic C functions that can be used in future projects. The project aims to help students become more familiar with the standard library functions in C and improve their programming skills.
+My implementation of fundamental C utilities: string functions, memory operations, conversions, file-descriptor output and linked lists.
 
-The libft library includes functions for working with strings, memory, linked lists, and more. Students are required to implement their own versions of these functions without using any external libraries or built-in functions.
+The library is reused by other applications in this repository. The shared version adds small helpers such as `ft_strcmp` and `ft_isspace`.
 
-In addition to implementing the required functions, students are also expected to write thorough documentation for each function and include unit tests to ensure that their functions work correctly.
+```bash
+make -C libft
+```
 
-The libft project is a challenging but rewarding exercise in programming that provides students with a solid foundation in C and helps prepare them for more advanced projects in the future.
+**Focus:** pointers, allocation, memory safety, data structures and C APIs.

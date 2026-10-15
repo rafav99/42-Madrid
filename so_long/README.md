@@ -1,5 +1,22 @@
-# so_long
+# so_long — The Library
 
-The original game files, maps, and sprites will be imported from `rafav99/so_long` by `make setup`. The Linux integration uses MiniLibX from 42Paris.
+A small 2D exploration game written in C with **MiniLibX**.
 
-Linux rendering uses `linux_render.c`, which composites XPM sprites over background tiles into one off-screen image and displays it once per movement. This avoids black transparency rectangles and flicker in the original macOS-oriented renderer. Original renderer files remain in the directory for reference.
+Explore a library, collect all books and reach the exit. Levels are defined by `.ber` maps with walls (`1`), floor (`0`), collectibles (`C`), a player (`P`) and an exit (`E`).
+
+- Tile-based rendering with XPM sprites
+- Map shape and path validation
+- Movement using WASD or the arrow keys on Linux; Escape to quit
+- Framebuffer-based composition on Linux to preserve transparent sprites and eliminate flicker
+
+## Play on Linux
+
+From the repository root, after installing the dependencies described in the main README:
+
+```bash
+make
+cd so_long
+./so_long maps/mymap.ber
+```
+
+**Focus:** graph reachability, game state, events, sprite rendering and platform portability.

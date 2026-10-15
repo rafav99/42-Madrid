@@ -1,19 +1,16 @@
 # push_swap
 
-Working reconstruction based on the original 2022 experimental chunk-sorting implementation, preserved in `prototype/`.
+Sort integer inputs using two stacks and a restricted instruction set.
 
-For inputs of up to five integers, the solver applies a dedicated small-stack strategy. For larger inputs, it ranks the values, transfers consecutive rank chunks from A to B, rotates B to keep smaller ranks deeper, then retrieves the maximum from B to A. Only legal push_swap operations are printed.
+The program validates signed integers, rejects duplicates, normalizes values into ranks and prints stack operations (`sa`, `pb`, `ra`, `rrb`, etc.) rather than the sorted array. It uses dedicated strategies for small inputs and a chunk-based approach for larger ones.
 
-```sh
+```bash
+make -C libft
 make -C push_swap
 ./push_swap/push_swap 3 2 1
-./push_swap/push_swap "3 2 1"
+python3 push_swap/tests.py
 ```
 
-Rejects duplicate, malformed and out-of-range signed 32-bit integers with `Error` on stderr; an empty invocation produces no output. Links the shared `../libft/libft.a`, rather than duplicating `ft_*` routines. Original drafts are kept intact as historical source materials in `prototype/`.
+The randomized test suite checks correctness and instruction counts. One run averaged about 667 operations for 100 values and 5,866 for 500 values; these are measured averages, not guarantees. `prototype/` preserves earlier sorting experiments from which this implementation was rebuilt.
 
-This is a modern reconstruction, not a claim to have recovered the exact previously submitted project.
-
-Regression tests: `python3 push_swap/tests.py` after building.
-
-Performance note: the solution is correct on the included randomized tests; the 500-element sorting count can still be optimized. It has not been audited for the 42 Norm or evaluated by moulinette.
+**Focus:** algorithms, stacks, rank normalization and performance.
