@@ -36,6 +36,13 @@ Argument parsing, index normalization, stack operations and chunk-based sorting.
 
 [Source and details →](push_swap/README.md)
 
+### [pipex](pipex/)
+**Unix pipelines, process creation and file-descriptor redirection.**
+
+A command pipeline in C using `pipe`, `fork`, `dup2` and `execve`, with input/output files and command lookup through `PATH`.
+
+[Source and details →](pipex/README.md)
+
 ## C libraries
 
 | Library | Focus |
@@ -62,6 +69,7 @@ Build an individual project with `make -C <directory>`, for example `make -C pus
 ./minishell/minishell
 ./philosophers/philo 5 800 200 200 5
 ./push_swap/push_swap 3 2 1
+./pipex/pipex pipex/infile "grep naranja" "wc -l" /tmp/pipex-out.txt
 (cd so_long && ./so_long maps/mymap.ber)
 ```
 
